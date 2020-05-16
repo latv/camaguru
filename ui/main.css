@@ -1,0 +1,28 @@
+.header{
+    /* background-color : red; */
+    height: 10em;
+    border: 1px solid red;
+}
+
+.Main{
+    height: 25em;
+
+    /* width: auto-fit; */
+    /* display: inline-block; */
+    border: 1px solid red;
+    /* margin:10px; */
+}
+.side{
+    overflow: hidden;
+    float: right;
+    width: 10em;
+    height: 25em;
+    border: 1px solid red;
+}
+.main{
+    float: left;
+}
+.footer{
+    border: 1px solid red;
+    height: 5em;
+}
