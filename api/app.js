@@ -1,10 +1,11 @@
 
 const con = require('./db.js');
+
 con.con.connect(function(err) {
     if (err) throw err;
     console.log("Connected!");
   });
-
+  // console.log(con);
 // A BASIC Node server
 // Routing Requests
 
@@ -84,19 +85,16 @@ let routes = {
     res.write(payloadStr);
     res.end("\n");
   },
-  "kenny/is/mysterion": function(data, res) {
+  images: function(con, res) {
     //this function called if path is 'kenny/is/mysterion'
-    let payload = {
-      name: "Mysterion",
-      enemy: "The Coon",
-      today: +new Date()
-    };
+    let payload = {con};
     let payloadStr = JSON.stringify(payload);
     res.setHeader("Content-Type", "application/json");
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.writeHead(200);
     res.write(payloadStr);
     res.end("\n");
+    console.log(con);
   },
   notFound: function(data, res) {
     //this one gets called if no route matches
