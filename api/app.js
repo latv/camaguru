@@ -1,10 +1,17 @@
 
 const con = require('./db.js');
-
+const token = require ("./generator.js")
 con.con.connect(function(err) {
     if (err) throw err;
     console.log("Connected!");
+    con.con.query("CREATE TABLE users (name VARCHAR(255), password VARCHAR(255))", function (err, result) {
+      if (err) throw err;
+      console.log("Table created");
+    });
   });
+
+  console.log(token.token());
+  // console.log(token);
   // console.log(con);
 // A BASIC Node server
 // Routing Requests
