@@ -4,9 +4,9 @@ const token = require ("./generator.js")
 con.con.connect(function(err) {
     if (err) throw err;
     console.log("Connected!");
-    con.con.query("CREATE TABLE users (name VARCHAR(255), password VARCHAR(255))", function (err, result) {
+    con.con.query("CREATE TABLE IF NOT EXISTS users  (name VARCHAR(255), password VARCHAR(255))", function (err, result) {
       if (err) throw err;
-      console.log("Table created");
+      console.log("Table created, if not existed");
     });
   });
 
